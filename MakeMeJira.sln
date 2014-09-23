@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeMeJira", "MakeMeJira\MakeMeJira.csproj", "{A4255F76-57F6-4D79-9569-2DBA96633F74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeMeJira.Model", "MakeMeJira.Model\MakeMeJira.Model.csproj", "{BB60C129-9D4E-4B46-986E-C9DFBCABA1FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4255F76-57F6-4D79-9569-2DBA96633F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4255F76-57F6-4D79-9569-2DBA96633F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4255F76-57F6-4D79-9569-2DBA96633F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4255F76-57F6-4D79-9569-2DBA96633F74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB60C129-9D4E-4B46-986E-C9DFBCABA1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB60C129-9D4E-4B46-986E-C9DFBCABA1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB60C129-9D4E-4B46-986E-C9DFBCABA1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB60C129-9D4E-4B46-986E-C9DFBCABA1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
