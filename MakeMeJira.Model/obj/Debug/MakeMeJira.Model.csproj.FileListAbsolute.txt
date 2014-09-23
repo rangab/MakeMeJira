@@ -5,3 +5,10 @@ c:\users\ranga.bandara\documents\visual studio 2012\Projects\MakeMeJira\MakeMeJi
 c:\users\ranga.bandara\documents\visual studio 2012\Projects\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.dll
 c:\users\ranga.bandara\documents\visual studio 2012\Projects\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.pdb
 c:\users\ranga.bandara\documents\visual studio 2012\Projects\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.csprojResolveAssemblyReference.cache
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\bin\Debug\MakeMeJira.Model.dll
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\bin\Debug\MakeMeJira.Model.pdb
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.csprojResolveAssemblyReference.cache
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.dll
+C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira.Model\obj\Debug\MakeMeJira.Model.pdb
