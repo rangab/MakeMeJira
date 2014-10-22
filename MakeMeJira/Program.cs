@@ -144,33 +144,42 @@ namespace MakeMeJira
 
         private static bool CreateInJira(JiraIssue issue)
         {
- 
-            issue.Fields.Description = HttpUtility.HtmlDecode(issue.Fields.Description);
-            issue.Fields.Summary = HttpUtility.HtmlDecode(issue.Fields.Summary);
 
-            if (issue.Fields.Summary.Length > 255)
-                issue.Fields.Summary = issue.Fields.Summary.Substring(0, 255);
-            
-            var client = new RestClient();
-            var jiraUserName = ConfigurationManager.AppSettings["JiraUserName"];
-            var jiraPassword = ConfigurationManager.AppSettings["JiraPassword"];
-            var cred = UTF8Encoding.UTF8.GetBytes(jiraUserName + ":" + jiraPassword);
-            var restRequest = new RestRequest(JIRA_BASE_URL + "issue",Method.POST);
-            var serializedIssue = JsonConvert.SerializeObject(issue);
-
-            restRequest.AddHeader("Authorization", "Basic " + Convert.ToBase64String(cred));
-            restRequest.AddHeader("Accept", "application/json");
-            restRequest.AddParameter("application/json",serializedIssue,ParameterType.RequestBody);
-
-            var result          = client.Execute<JiraResponse>(restRequest);
-            var jiraResponse    = JsonConvert.DeserializeObject<JiraResponse>(result.Content);
-
-
-            if (result.StatusCode == HttpStatusCode.Created)
+            try
             {
-                Console.WriteLine("Issue has been successfully created in JIRA. Please search for " + jiraResponse.Key);
-                Console.WriteLine("Url to access issue is : " + jiraResponse.Self);
-                return true;
+
+                issue.Fields.Description = HttpUtility.HtmlDecode(issue.Fields.Description);
+                issue.Fields.Summary = HttpUtility.HtmlDecode(issue.Fields.Summary);
+
+                if (issue.Fields.Summary.Length > 255)
+                    issue.Fields.Summary = issue.Fields.Summary.Substring(0, 255);
+
+                var client = new RestClient();
+                var jiraUserName = ConfigurationManager.AppSettings["JiraUserName"];
+                var jiraPassword = ConfigurationManager.AppSettings["JiraPassword"];
+                var cred = UTF8Encoding.UTF8.GetBytes(jiraUserName + ":" + jiraPassword);
+                var restRequest = new RestRequest(JIRA_BASE_URL + "issue", Method.POST);
+                var serializedIssue = JsonConvert.SerializeObject(issue);
+
+                restRequest.AddHeader("Authorization", "Basic " + Convert.ToBase64String(cred));
+                restRequest.AddHeader("Accept", "application/json");
+                restRequest.AddParameter("application/json", serializedIssue, ParameterType.RequestBody);
+
+                var result = client.Execute<JiraResponse>(restRequest);
+                var jiraResponse = JsonConvert.DeserializeObject<JiraResponse>(result.Content);
+
+
+                if (result.StatusCode == HttpStatusCode.Created)
+                {
+                    Console.WriteLine("Issue has been successfully created in JIRA. Please search for " + jiraResponse.Key);
+                    Console.WriteLine("Url to access issue is : https://peakadventuretravel.atlassian.net/browse/{0}" + jiraResponse.Key);
+                    return true;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Oooops something went wrong !!!! :/");
+                return false;
             }
              
             return false;
