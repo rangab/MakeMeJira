@@ -29,15 +29,25 @@ namespace MakeMeJira
 
         static void Main(string[] args)
         {
-
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Please enter the incident Id");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
             var incidentId = Convert.ToInt32(Console.ReadLine());
             var projectKey = ConfigurationManager.AppSettings["ProjectKey"];
 
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Reading the incident from SDP...");
+            Console.WriteLine("");
+
+            var sdpIncident = ReadFromSDP(incidentId, args);
+            
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("");
             Console.WriteLine("Please enter the Issue Type");
             Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("1. Bug");
             Console.WriteLine("2. Story");
             Console.WriteLine("3. Task");
@@ -46,10 +56,7 @@ namespace MakeMeJira
             Console.WriteLine("");
 
             var issueTypeId = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Reading the incident from SDP...");
-            Console.WriteLine("");
-
+         
             while (issueTypeId > 0 && issueTypeId > 5)
             {
                 Console.WriteLine("");
@@ -64,18 +71,19 @@ namespace MakeMeJira
                 Console.WriteLine("");
             }
 
+            Console.WriteLine("");
 
             //var issueTypeId = 1;
             //var incidentId = 101359;
             //var projectKey = "SI";
 
-            var sdpIncident = ReadFromSDP(incidentId);
             var jiraIssue = sdpIncident.ToJiraIssue(projectKey, SDP_BASE_URL,(JiraIssueType)issueTypeId);
 
             var isCreated = CreateInJira(jiraIssue);
 
             while (!isCreated)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Oooops!!! somethign went wrong. Please try again...");
                 Console.WriteLine("");
                 Main(args);
@@ -106,8 +114,8 @@ namespace MakeMeJira
             xmlSerializer.Serialize(textWriter, toSerialize, ns);
             return textWriter.ToString();
         }
-        
-        private static SdpApi ReadFromSDP(int incidentId)
+
+        private static SdpApi ReadFromSDP(int incidentId, string[] args)
         {
             var sdpApiKey = ConfigurationManager.AppSettings["SDPApiKey"];
             string getUrl = string.Format("http://servicedesk.peakadventuretravel.com//sdpapi/request/{0}", incidentId);
@@ -124,6 +132,15 @@ namespace MakeMeJira
 
 
             var result = ExecuteRequest(request);
+
+            if (result.Content.Contains("Invalid requestID in given URL"))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Provided Incident ID is invalid. Please Enter again...");
+                Console.WriteLine("");
+                Main(args);               
+            }
+
             var deserializer = new XmlDeserializer();
 
            
@@ -147,6 +164,9 @@ namespace MakeMeJira
 
             try
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Writing to JIRA ...");
+                Console.WriteLine("");
 
                 issue.Fields.Description = HttpUtility.HtmlDecode(issue.Fields.Description);
                 issue.Fields.Summary = HttpUtility.HtmlDecode(issue.Fields.Summary);
@@ -171,6 +191,7 @@ namespace MakeMeJira
 
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Issue has been successfully created in JIRA. Please search for " + jiraResponse.Key);
                     Console.WriteLine("Url to access issue is : https://peakadventuretravel.atlassian.net/browse/{0}" + jiraResponse.Key);
                     return true;
@@ -178,6 +199,7 @@ namespace MakeMeJira
             }
             catch
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Oooops something went wrong !!!! :/");
                 return false;
             }
