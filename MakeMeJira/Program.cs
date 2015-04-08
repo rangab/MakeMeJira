@@ -29,7 +29,7 @@ namespace MakeMeJira
 
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("Please enter the incident Id");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
@@ -43,7 +43,8 @@ namespace MakeMeJira
 
             var sdpIncident = ReadFromSDP(incidentId, args);
             
-            Console.ForegroundColor = ConsoleColor.Green;
+            
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("");
             Console.WriteLine("Please enter the Issue Type");
             Console.WriteLine("");
@@ -191,7 +192,7 @@ namespace MakeMeJira
 
                 if (result.StatusCode == HttpStatusCode.Created)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Issue has been successfully created in JIRA. Please search for " + jiraResponse.Key);
                     Console.WriteLine("Url to access issue is : https://peakadventuretravel.atlassian.net/browse/{0}" + jiraResponse.Key);
                     return true;

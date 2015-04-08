@@ -30,3 +30,19 @@ C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMe
 C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira\bin\Debug\RestSharp.xml
 C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\ranga.bandara\Documents\Visual Studio 2012\MakeMeJira\MakeMeJira\MakeMeJira\obj\Debug\MakeMeJira.csprojResolveAssemblyReference.cache
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\MakeMeJira.exe.config
+D:\Work\MakeMeJira\MakeMeJira\obj\Debug\MakeMeJira.exe
+D:\Work\MakeMeJira\MakeMeJira\obj\Debug\MakeMeJira.pdb
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\MakeMeJira.exe
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\MakeMeJira.pdb
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\MakeMeJira.Model.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\Newtonsoft.Json.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\RestSharp.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\System.Net.Http.Formatting.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\WebAPIDoodle.Formatting.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\WebAPIDoodle.Http.dll
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\MakeMeJira.Model.pdb
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\Newtonsoft.Json.xml
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\RestSharp.xml
+D:\Work\MakeMeJira\MakeMeJira\bin\Debug\System.Net.Http.Formatting.xml
+D:\Work\MakeMeJira\MakeMeJira\obj\Debug\MakeMeJira.csprojResolveAssemblyReference.cache
