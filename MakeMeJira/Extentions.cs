@@ -13,6 +13,7 @@ namespace MakeMeJira
         public static JiraIssue ToJiraIssue(this SdpApi sdpIncident, string projectKey, string sdpBaseUrl, JiraIssueType issueType)
         {
             var jiraIssue = new JiraIssue();
+			
 
             jiraIssue.Fields = new Fields()
             {
